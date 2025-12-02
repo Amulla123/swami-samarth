@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Documents - Shree Swami Samarth  CHS Ltd, Panvel</title>
+  <title>Documents - Shree Swami Samarth CHS Ltd, Panvel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -15,16 +15,14 @@
         <h1 class="society-name">
           Shree Swami Samarth Co-operative Housing Society Ltd
         </h1>
-              </div>
+      </div>
 
       <p class="society-address">
         <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
           <circle cx="12" cy="10" r="3"></circle>
         </svg>
-        Sub-Plot No. 6, Survey No. 473/A/1, 473/A/2, 473/A/3, 478/1, 478/2, 478/3,
-        478/4, 478/5, 478/6, 478/7, 478/8 &amp; 478/9
-        (New Final Plot No. 36/2), Adarsh Co-op. Housing Society Ltd., Panvel
+        Shree Swami Samarth, City Smarg No. 660, Mahatma Phule Road, Panvel
       </p>
 
       <nav class="nav">
@@ -82,6 +80,7 @@
             <h3>UDPCR 2020</h3>
           </div>
           <p>Unified Development Control and Promotion Regulations 2020 document.</p>
+
           <div class="doc-links">
             <a href="udpcr-2020/UDPCR 2020.pdf" target="_blank" class="doc-link">
               <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -93,7 +92,7 @@
           </div>
         </div>
 
-        <!-- Folder 3: Introduction and DP Survey -->
+        <!-- Folder 3: Introduction & DP Survey -->
         <div class="folder-card">
           <div class="folder-header">
             <svg class="folder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -101,6 +100,7 @@
             </svg>
             <h3>Introduction and DP Survey</h3>
           </div>
+
           <p>Introduction document and Development Plan survey pages.</p>
 
           <div class="doc-links">
@@ -121,7 +121,7 @@
           </div>
         </div>
 
-        <!-- Folder 4: General Conditions for Redevelopment -->
+        <!-- Folder 4: General Conditions -->
         <div class="folder-card">
           <div class="folder-header">
             <svg class="folder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -129,6 +129,7 @@
             </svg>
             <h3>General Conditions for Redevelopment</h3>
           </div>
+
           <p>Scanned pages of the general terms and conditions for redevelopment.</p>
 
           <div class="doc-image-grid">
@@ -151,6 +152,7 @@
   <footer class="site-footer">
     <div class="container">
       <h3 class="footer-title">Society Management Committee</h3>
+
       <div class="footer-grid">
         <div class="footer-column">
           <div class="role-icon">👤</div>
@@ -160,7 +162,7 @@
         <div class="footer-column">
           <div class="role-icon">📋</div>
           <h4>Secretary</h4>
-          <p>Vishnu V. Manglorkar</p>
+          <p>Rajesh Kanojiya</p>
         </div>
         <div class="footer-column">
           <div class="role-icon">💼</div>
@@ -187,29 +189,26 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Image Modal Functionality
+    // Modal handling
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const modalCaption = document.getElementById('modalCaption');
     const closeBtn = document.querySelector('.modal-close');
 
-    // Add click event to all document images
     document.querySelectorAll('.doc-image-grid img').forEach(img => {
       img.addEventListener('click', function() {
         modal.style.display = 'flex';
         modalImg.src = this.src;
         modalCaption.textContent = this.alt;
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        document.body.style.overflow = 'hidden';
       });
     });
 
-    // Close modal when clicking X
     closeBtn.addEventListener('click', function() {
       modal.style.display = 'none';
       document.body.style.overflow = 'auto';
     });
 
-    // Close modal when clicking outside image
     modal.addEventListener('click', function(e) {
       if (e.target === modal) {
         modal.style.display = 'none';
@@ -217,9 +216,8 @@
       }
     });
 
-    // Close modal with Escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.style.display === 'flex') {
+      if (e.key === 'Escape') {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
       }
@@ -227,7 +225,4 @@
   </script>
 
 </body>
-
 </html>
-
-
