@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shree Swami Samarth  Co-operative Housing Society Ltd, Panvel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="society-name">
+          Shree Swami Samarth  Co-operative Housing Society Ltd
+        </h1>
+      </div>
+
+      <p class="society-address">
+        <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        Sub-Plot No. 6, Survey No. 473/A/1, 473/A/2, 473/A/3, 478/1, 478/2, 478/3, 
+        478/4, 478/5, 478/6, 478/7, 478/8 &amp; 478/9 
+        (New Final Plot No. 36/2), Adarsh Co-op. Housing Society Ltd., Panvel
+      </p>
+
+      <nav class="nav">
+        <a href="index.html" class="active">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+          Home
+        </a>
+        <a href="documents.html">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          Documents
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section class="welcome-section">
+      <div class="welcome-card">
+        <h2>Welcome to Our Community</h2>
+        <p>Shree Swami Samarth  Co-operative Housing Society is a vibrant community in Panvel, committed to providing quality living spaces and excellent community services to all our residents.</p>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <h2 class="section-title">Society Gallery</h2>
+      <div class="image-grid-gallery">
+        <div class="gallery-item">
+          <img src="images/image1.jpeg" alt="Society building view 1" />
+          <div class="gallery-overlay">
+            <span>Building View</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/image2.jpeg" alt="Society building view 2" />
+          <div class="gallery-overlay">
+            <span>Community Space</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/image3.jpeg" alt="Society building view 3" />
+          <div class="gallery-overlay">
+            <span>Exterior View</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <h3 class="footer-title">Society Management Committee</h3>
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="role-icon">👤</div>
+          <h4>Chairman</h4>
+          <p>Kedar D. Yadav</p>
+        </div>
+        <div class="footer-column">
+          <div class="role-icon">📋</div>
+          <h4>Secretary</h4>
+          <p>Rajesh Kanojiya</p>
+        </div>
+        <div class="footer-column">
+          <div class="role-icon">💼</div>
+          <h4>Treasurer</h4>
+          <p>Sangeeta Patil</p>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+      
+      <p class="copyright">
+        &copy; <span id="year"></span> Shree Swami Samarth Parasnath Co-operative Housing Society Ltd, Panvel. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Image Modal Functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeBtn = document.querySelector('.modal-close');
+
+    // Add click event to all gallery images
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', function() {
+        modal.style.display = 'flex';
+        modalImg.src = this.src;
+        modalCaption.textContent = this.alt;
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close modal when clicking X
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close modal when clicking outside image
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
+
+</body>
+</html>
